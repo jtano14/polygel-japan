@@ -53,7 +53,21 @@
         </div>
       </section>
     </div>
-    <section id="about" class="placeholder"><h2>About Us</h2><p>Content pending review.</p></section>
+    <section id="about" class="about-section" aria-labelledby="about-heading">
+      <div class="about-heading"><div><p class="eyebrow">POLYGEL JAPAN</p><h2 id="about-heading">About Us</h2></div><p>Explore our corporate information, leadership, group manufacturing capabilities and quality commitments.</p></div>
+      <div class="about-gallery" aria-label="About Us information gallery">
+        <button type="button" class="about-panel is-active" data-about="profile" aria-pressed="true" aria-controls="about-details"><img src="https://picsum.photos/id/1040/900/1200" alt="Architectural photography placeholder" loading="lazy"><span class="about-panel-label">Corporate Profile</span></button>
+        <button type="button" class="about-panel" data-about="team" aria-pressed="false" aria-controls="about-details"><img src="https://picsum.photos/id/1011/900/1200" alt="Landscape photography placeholder for management" loading="lazy"><span class="about-panel-label">Management Team</span></button>
+        <button type="button" class="about-panel" data-about="facilities" aria-pressed="false" aria-controls="about-details"><img src="https://picsum.photos/id/1018/900/1200" alt="Landscape photography placeholder for manufacturing" loading="lazy"><span class="about-panel-label">Manufacturing Facilities</span></button>
+        <button type="button" class="about-panel" data-about="compliance" aria-pressed="false" aria-controls="about-details"><img src="https://picsum.photos/id/1039/900/1200" alt="Landscape photography placeholder for compliance" loading="lazy"><span class="about-panel-label">Compliance &amp; Quality</span></button>
+      </div>
+      <div class="about-details" id="about-details">
+        <article class="about-detail is-active" data-about-detail="profile"><h3>Corporate Profile</h3><p>Polygel Japan Co., Ltd. connects Japanese industrial customers with specialty chemical products and Polygel Group capabilities.</p><dl class="company-facts"><div><dt>Company</dt><dd>Polygel Japan Co., Ltd.</dd></div><div><dt>Representative Director</dt><dd>Kiyomitsu Horikawa</dd></div><div><dt>Capital</dt><dd>¥1,000,000</dd></div><div><dt>Shareholders</dt><dd>Polygel Industries Pvt. Ltd. (51%) / FLUX7 Co., Ltd. (49%)</dd></div><div><dt>Corporate Number</dt><dd>9140001144575 (verify before publication)</dd></div><div><dt>Registered Address</dt><dd>1-22-9 Tsukaguchi-cho, Amagasaki, Hyogo, Japan (verify before publication)</dd></div></dl></article>
+        <article class="about-detail" data-about-detail="team" hidden><h3>Management Team</h3><p>Leadership overseeing the Japan business and its international relationships.</p><div class="about-name-grid"><p><strong>Kiyomitsu Horikawa</strong><span>Representative Director</span></p><p><strong>Jeff Tano</strong><span>Director</span></p><p><strong>Chetan Shah</strong><span>Director</span></p><p><strong>Anil Phatangare</strong><span>Director</span></p></div><p class="about-note">Biographies and photographs will be added following management approval.</p></article>
+        <article class="about-detail" data-about-detail="facilities" hidden><h3>Manufacturing Facilities</h3><p>Polygel Group operates manufacturing facilities in India and Brunei. Polygel Japan connects local customers with relevant group manufacturing and technical capabilities.</p><p class="about-note">Facility photographs, capacity figures and certifications are pending verification. These are group facilities, not assets owned by Polygel Japan.</p></article>
+        <article class="about-detail" data-about-detail="compliance" hidden><h3>Compliance &amp; Quality</h3><p>Product documentation, quality review and regulatory requirements are important parts of supplying specialty chemicals to Japanese customers.</p><p class="about-note">Specific certifications, SDS/TDS availability and Japan regulatory statements will be published only after confirmation.</p></article>
+      </div>
+    </section>
     <section id="products" class="placeholder"><h2>Products</h2><p>Product catalogue and specifications to be added after verification.</p></section>
     <section id="applications" class="placeholder"><h2>Applications</h2><p>Content pending review.</p></section>
     <section id="business" class="placeholder"><h2>Our Business</h2><p>Import, export and distribution content pending review.</p></section>
