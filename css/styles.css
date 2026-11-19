@@ -227,3 +227,8 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
   .flow-row.is-active .flow-band,
   .flow-row:hover .flow-band{display:none}
 }
+
+/* Approved palette: white active band, forest-green text, no arrows */
+.flow-band{background:#fff;color:#0d4532}
+.flow-row.is-active .flow-trigger{color:#0d4532}
+@media(hover:hover) and (pointer:fine){.flow-row:hover .flow-trigger{color:#0d4532}}
