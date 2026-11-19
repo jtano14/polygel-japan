@@ -141,3 +141,7 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .feature-number{top:.8rem}
 .feature-panel-content{gap:.45rem}
 .feature-panel-content small{display:block}
+
+/* Shared horizontal alignment for intro and About Us */
+.intro-layout,.about-section{box-sizing:border-box;width:100%;max-width:1500px;margin-left:auto;margin-right:auto;padding-left:clamp(1rem,2.5vw,3rem);padding-right:clamp(1rem,2.5vw,3rem)}
+.about-heading,.about-gallery,.about-details{max-width:none}
