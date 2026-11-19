@@ -59,3 +59,23 @@ aboutPanels.forEach(panel=>{
   });
   panel.addEventListener("focus",()=>activateAbout(panel));
 });
+
+/* Flowing menu hover highlight and click-to-expand descriptions */
+const flowRows=[...document.querySelectorAll(".flow-row")];
+const flowDetails=[...document.querySelectorAll(".flow-detail")];
+flowRows.forEach((row,index)=>{
+  const button=row.querySelector(".flow-trigger");
+  row.addEventListener("pointerenter",event=>{if(event.pointerType!=="touch")row.classList.add("is-active")});
+  row.addEventListener("pointerleave",()=>{if(button.getAttribute("aria-expanded")!=="true")row.classList.remove("is-active")});
+  button.addEventListener("focus",()=>row.classList.add("is-active"));
+  button.addEventListener("blur",()=>{if(button.getAttribute("aria-expanded")!=="true")row.classList.remove("is-active")});
+  button.addEventListener("click",()=>{
+    const open=button.getAttribute("aria-expanded")!=="true";
+    flowRows.forEach((item,i)=>{
+      const selected=open&&index===i;
+      item.classList.toggle("is-active",selected);
+      item.querySelector(".flow-trigger").setAttribute("aria-expanded",String(selected));
+      flowDetails[i].hidden=!selected;
+    });
+  });
+});
