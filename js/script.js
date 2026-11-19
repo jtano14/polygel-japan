@@ -15,15 +15,11 @@ if(menuButton&&navigation){
 const year=document.querySelector("#year");
 if(year)year.textContent=String(new Date().getFullYear());
 
-const featureItems=[...document.querySelectorAll(".feature-item")];
-const featureCount=document.querySelector(".feature-count");
-let featureIndex=0;
-function showFeature(next){
-  if(!featureItems.length)return;
-  featureItems[featureIndex].classList.remove("is-active");
-  featureIndex=(next+featureItems.length)%featureItems.length;
-  featureItems[featureIndex].classList.add("is-active");
-  if(featureCount)featureCount.textContent=String(featureIndex+1).padStart(2,"0")+" / 05";
-}
-document.querySelector(".feature-prev")?.addEventListener("click",()=>showFeature(featureIndex-1));
-document.querySelector(".feature-next")?.addEventListener("click",()=>showFeature(featureIndex+1));
+const featurePanels=[...document.querySelectorAll(".feature-panel")];
+featurePanels.forEach(panel=>panel.addEventListener("click",()=>{
+  featurePanels.forEach(item=>{
+    const active=item===panel;
+    item.classList.toggle("is-active",active);
+    item.setAttribute("aria-pressed",String(active));
+  });
+}));
