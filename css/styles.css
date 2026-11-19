@@ -254,3 +254,10 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 
 /* Product captions: titles start immediately below aligned numbers */
 .chroma-caption h3{align-items:flex-start}
+
+/* Define the full flowing-menu stack and keep separators visible on white hover */
+.flow-menu{border:1px solid #0d4532}
+.flow-row{border-bottom:1px solid #759587}
+.flow-row:last-child{border-bottom:0}
+.flow-row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#759587;z-index:3;pointer-events:none}
+.flow-row:last-child::after{display:none}
