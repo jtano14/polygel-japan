@@ -135,3 +135,9 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 @media(prefers-reduced-motion:reduce){.about-panel,.about-panel img,.about-panel-label{transition:none}}
 \n/* Keep the information panel consistent on desktop, flexible on mobile */
 @media(max-width:700px){.about-details{min-height:0}}
+
+/* Keep feature descriptions at the top of the expanded card */
+.feature-panel{align-items:flex-start;padding-top:3.1rem}
+.feature-number{top:.8rem}
+.feature-panel-content{gap:.45rem}
+.feature-panel-content small{display:block}
