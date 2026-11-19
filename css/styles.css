@@ -47,11 +47,11 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .explore-list a span{font-size:clamp(1.1rem,2.15vw,2rem);line-height:1.15;font-weight:700;letter-spacing:-.035em;flex:1}
 .explore-list a b{font-size:1.1rem;color:var(--green)}
 .explore-list a{position:relative;isolation:isolate;overflow:hidden}
-.explore-list a::before{content:"";position:absolute;inset:0;background:var(--forest);transform:scaleX(0);transform-origin:left center;transition:transform .38s ease;z-index:-1}
+.explore-list a::before{content:"";position:absolute;inset:0;background:var(--brand-lime);transform:scaleX(0);transform-origin:left center;transition:transform .38s ease;z-index:-1}
 @media(hover:hover) and (pointer:fine){
 .explore-list a:hover::before{transform:scaleX(1)}
-.explore-list a:hover{color:#fff}
-.explore-list a:hover small,.explore-list a:hover b{color:#fff}
+.explore-list a:hover{color:#173124}
+.explore-list a:hover small,.explore-list a:hover b{color:#173124}
 }
 .explore-list a:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
 @media(hover:none),(pointer:coarse){
