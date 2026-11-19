@@ -35,3 +35,14 @@
 .feature-panel-content strong{font-size:.85rem}
 .feature-panel-content small{font-size:.7rem}
 }
+
+@media(max-width:700px){
+.about-heading{display:block}.about-heading>p{margin-top:.65rem}
+.about-gallery{height:360px;flex-direction:column;gap:6px}
+.about-panel{flex:1}.about-panel.is-active{flex:3}
+.about-panel-label{font-size:1rem}
+.about-details{padding:1.1rem}
+.company-facts{grid-template-columns:1fr}
+.company-facts>div{grid-template-columns:120px 1fr}
+.about-name-grid{grid-template-columns:1fr}
+}
