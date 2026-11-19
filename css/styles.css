@@ -47,11 +47,11 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .explore-list a span{font-size:clamp(1.1rem,2.15vw,2rem);line-height:1.15;font-weight:700;letter-spacing:-.035em;flex:1}
 .explore-list a b{font-size:1.1rem;color:var(--green)}
 .explore-list a{position:relative;isolation:isolate;overflow:hidden}
-.explore-list a::before{content:"";position:absolute;inset:0;background:var(--brand-lime);transform:scaleX(0);transform-origin:left center;transition:transform .38s ease;z-index:-1}
+.explore-list a::before{content:"";position:absolute;inset:0;background:var(--forest);transform:scaleX(0);transform-origin:left center;transition:transform .38s ease;z-index:-1}
 @media(hover:hover) and (pointer:fine){
 .explore-list a:hover::before{transform:scaleX(1)}
-.explore-list a:hover{color:#173124}
-.explore-list a:hover small,.explore-list a:hover b{color:#173124}
+.explore-list a:hover{color:#fff}
+.explore-list a:hover small,.explore-list a:hover b{color:#fff}
 }
 .explore-list a:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
 @media(hover:none),(pointer:coarse){
@@ -120,7 +120,7 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .about-panel-label{position:absolute;bottom:1.2rem;left:1rem;right:.5rem;z-index:1;color:#fff;font-weight:700;font-size:clamp(.95rem,1.5vw,1.35rem);line-height:1.25;opacity:0;transform:translateX(12px);transition:opacity .3s,transform .4s}
 .about-panel.is-active .about-panel-label{opacity:1;transform:none}
 .about-panel:focus-visible{outline:3px solid var(--brand-lime);outline-offset:-3px}
-.about-details{max-width:1450px;margin:1.25rem auto 0;padding:1.4rem 1.6rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.about-details{width:100%;max-width:1450px;min-height:310px;margin:1.25rem auto 0;padding:1.4rem 1.6rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
 .about-detail[hidden]{display:none}
 .about-detail h3{margin:0 0 .6rem;font-size:1.35rem}
 .about-detail>p{margin:.5rem 0 1rem;max-width:75ch}
@@ -133,3 +133,5 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .about-name-grid span{display:block;font-size:.82rem;color:#607067}
 .about-note{font-size:.85rem;color:#607067}
 @media(prefers-reduced-motion:reduce){.about-panel,.about-panel img,.about-panel-label{transition:none}}
+\n/* Keep the information panel consistent on desktop, flexible on mobile */
+@media(max-width:700px){.about-details{min-height:0}}
