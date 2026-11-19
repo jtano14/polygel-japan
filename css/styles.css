@@ -261,3 +261,37 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .flow-row:last-child{border-bottom:0}
 .flow-row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#759587;z-index:3;pointer-events:none}
 .flow-row:last-child::after{display:none}
+
+/* Global Network, Contact and corporate footer */
+.network-section,.contact-section{max-width:1500px;margin:auto;padding:3.5rem clamp(1rem,2.5vw,3rem);border-top:1px solid var(--border)}
+.office-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:1.6rem 0}
+.office-card{min-height:190px;border:1px solid #d5e2dd;border-radius:14px;background:linear-gradient(140deg,#fff,#eaf3f0);padding:1.2rem;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;cursor:pointer;color:var(--ink);font:inherit}
+.office-card small{font-size:.7rem;text-transform:uppercase;color:#477268;margin-bottom:auto;letter-spacing:.04em}
+.office-card strong{font-size:clamp(1.3rem,2.2vw,2rem);letter-spacing:-.04em}
+.office-card span{font-size:.8rem;color:#587368}
+.office-card.is-selected{border:2px solid #0d653f;background:linear-gradient(140deg,#fff,#dcece7)}
+.office-card:focus-visible{outline:3px solid var(--brand-lime);outline-offset:3px}
+.office-panel{display:grid;grid-template-columns:42% 58%;border:1px solid var(--border);border-radius:14px;overflow:hidden;min-height:340px;background:#f3f7f4}
+.office-info{padding:clamp(1.5rem,3vw,3rem)}
+.office-info h3{font-size:clamp(1.7rem,3vw,2.4rem);margin:.3rem 0}
+.office-info>p{max-width:33rem}
+.office-notice{font-size:.84rem;color:#657b6c}
+.office-map{display:grid;place-items:center;padding:2rem;background:repeating-linear-gradient(45deg,#e0ebe5,#e0ebe5 14px,#e8f1eb 14px,#e8f1eb 28px);text-align:center;color:#456554}
+.contact-form{border:1px solid var(--border);border-radius:12px;padding:clamp(1.2rem,3vw,2.5rem);background:#f7faf8;max-width:1000px}
+.contact-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.contact-form label{display:flex;flex-direction:column;gap:.35rem;font-size:.88rem;font-weight:600;margin-bottom:1rem}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;border:1px solid #cbd9d0;border-radius:5px;padding:.85rem;background:#fff;color:var(--ink);font:inherit}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:2px solid var(--brand-lime)}
+.contact-note{font-size:.83rem;color:#647669}
+.contact-form button{background:#0d4532;color:#fff;border:0;border-radius:5px;padding:.9rem 1.4rem;font:inherit;font-weight:600}
+.contact-form button:disabled{opacity:.6;cursor:not-allowed}
+.site-footer--expanded{background:#103b2e;color:#fff;padding:3.5rem clamp(1rem,4vw,5rem) 1.4rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;align-items:start}
+.footer-brand img{max-width:190px;height:auto;background:#fff;padding:.6rem;border-radius:5px}
+.footer-brand p{max-width:350px;color:#d1e3d6;font-size:.9rem}
+.footer-links{display:flex;flex-direction:column;gap:.65rem}
+.footer-links strong{color:#b9dd87;margin-bottom:.3rem}
+.footer-links a{color:#e5f0e8;text-decoration:none;font-size:.88rem}
+.footer-links a:hover{text-decoration:underline}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #42675b;padding-top:1.3rem;color:#c7d7cc;font-size:.78rem}
+@media(max-width:800px){.office-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.office-panel{grid-template-columns:1fr}.office-map{min-height:220px}.site-footer--expanded{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.office-card{min-height:150px}.contact-fields{grid-template-columns:1fr}.site-footer--expanded{grid-template-columns:1fr;gap:1.5rem}}
