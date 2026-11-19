@@ -171,3 +171,18 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 @media(hover:hover) and (pointer:fine){.masonry-card:hover img{transform:scale(1.07);filter:brightness(.9)}}
 .showcase-note{font-size:.78rem;color:#697a70;margin:1rem 0 0}
 @media(prefers-reduced-motion:reduce){.chroma-card img,.chroma-card::after,.masonry-card img{transition:none}}
+
+/* Customer marquee: placeholders until approved client logos are supplied */
+.clients-section{padding:2rem 0 2.25rem;border-top:1px solid var(--border);overflow:hidden}
+.clients-heading{max-width:1500px;margin:0 auto 1.25rem;padding:0 clamp(1rem,2.5vw,3rem)}
+.clients-heading .eyebrow{margin:0 0 .25rem}
+.clients-heading h2{font-size:clamp(1.45rem,2.5vw,2rem);margin:0}
+.clients-heading>p:last-child{color:#607067;font-size:.88rem;margin:.3rem 0 0}
+.clients-marquee{width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.clients-track{display:flex;width:max-content;animation:clients-scroll 38s linear infinite}
+.clients-set{display:flex;gap:1rem;flex:none;padding-right:1rem}
+.client-logo-placeholder{width:185px;height:86px;display:flex;align-items:center;justify-content:center;gap:.7rem;border:1px solid var(--border);background:#fff;color:#78877d;font-size:.82rem;font-weight:700;letter-spacing:.08em;flex:none}
+.client-logo-symbol{width:25px;height:25px;border:3px solid #b8c9bd;border-radius:50%;display:block}
+@keyframes clients-scroll{to{transform:translateX(-50%)}}
+@media(hover:hover) and (pointer:fine){.clients-marquee:hover .clients-track{animation-play-state:paused}}
+@media(prefers-reduced-motion:reduce){.clients-track{animation:none}.clients-marquee{overflow-x:auto;mask-image:none}.clients-set[aria-hidden="true"]{display:none}}
