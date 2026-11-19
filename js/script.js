@@ -16,10 +16,23 @@ const year=document.querySelector("#year");
 if(year)year.textContent=String(new Date().getFullYear());
 
 const featurePanels=[...document.querySelectorAll(".feature-panel")];
-featurePanels.forEach(panel=>panel.addEventListener("click",()=>{
+const featureAccordion=document.querySelector(".feature-accordion");
+function activateFeature(panel){
   featurePanels.forEach(item=>{
     const active=item===panel;
     item.classList.toggle("is-active",active);
     item.setAttribute("aria-pressed",String(active));
   });
-}));
+}
+featurePanels.forEach(panel=>{
+  panel.addEventListener("click",()=>activateFeature(panel));
+  panel.addEventListener("pointerenter",event=>{
+    if(event.pointerType==="mouse"||event.pointerType==="pen")activateFeature(panel);
+  });
+  panel.addEventListener("focus",()=>activateFeature(panel));
+});
+featureAccordion?.addEventListener("pointerleave",event=>{
+  if((event.pointerType==="mouse"||event.pointerType==="pen")&&featurePanels.length){
+    activateFeature(featurePanels[0]);
+  }
+});
