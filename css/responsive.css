@@ -26,3 +26,12 @@
 }
 
 @media(max-width:900px){.intro-layout{grid-template-columns:1fr;gap:1.25rem;padding-left:1.25rem;padding-right:1.25rem}.explore-list a{min-height:55px}.explore-list a span{font-size:clamp(1.2rem,4vw,1.8rem)}}
+
+@media(max-width:600px){
+.feature-accordion{height:215px;gap:3px}
+.feature-panel{padding:.7rem .4rem}
+.feature-panel.is-active{flex:6}
+.feature-number{top:.5rem;left:.35rem;font-size:.8rem}
+.feature-panel-content strong{font-size:.85rem}
+.feature-panel-content small{font-size:.7rem}
+}
