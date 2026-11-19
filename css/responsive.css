@@ -16,3 +16,11 @@
 .site-footer{align-items:flex-start;flex-direction:column;gap:.75rem}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media(max-width:900px){
+.intro-layout{grid-template-columns:1fr;gap:1.25rem;padding:1rem 1.25rem 2rem}
+.explore-list a{min-height:55px}
+.explore-list a span{font-size:clamp(1.2rem,4vw,1.8rem)}
+.intro-layout .hero-copy{padding:.5rem 0}
+.intro-layout .hero-art{min-height:160px}
+}
