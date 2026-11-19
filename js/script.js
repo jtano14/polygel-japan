@@ -103,3 +103,21 @@ officeCards.forEach((card,index)=>{
     if(type)type.textContent=officeTypes[index];
   });
 });
+
+
+/* Carry technical document selections to the preview contact form. */
+const documentContactForm=document.querySelector("#contact-form");
+if(documentContactForm){
+  try{
+    const requests=JSON.parse(sessionStorage.getItem("polygel-japan-document-requests")||"[]");
+    const message=documentContactForm.querySelector('textarea[name="message"]');
+    const topic=documentContactForm.querySelector('select[name="topic"]');
+    if(Array.isArray(requests)&&requests.length&&message){
+      const lines=requests.filter(item=>item&&typeof item.family==="string"&&typeof item.document==="string").map(item=>"- "+item.family+": "+item.document);
+      if(lines.length){
+        message.value="Technical document request:\n"+lines.join("\n")+"\n\nAdditional information:\n";
+        if(topic)topic.value="Products and distribution";
+      }
+    }
+  }catch(_){}
+}
