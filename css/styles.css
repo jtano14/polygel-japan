@@ -46,8 +46,20 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .explore-list a small{font-size:.68rem;align-self:flex-start;padding-top:.7rem;color:var(--green)}
 .explore-list a span{font-size:clamp(1.1rem,2.15vw,2rem);line-height:1.15;font-weight:700;letter-spacing:-.035em;flex:1}
 .explore-list a b{font-size:1.1rem;color:var(--green)}
-.explore-list a:hover,.explore-list a:focus-visible{background:var(--forest);color:#fff}
-.explore-list a:hover small,.explore-list a:hover b,.explore-list a:focus-visible small,.explore-list a:focus-visible b{color:#fff}
+.explore-list a{position:relative;isolation:isolate;overflow:hidden}
+.explore-list a::before{content:"";position:absolute;inset:0;background:var(--forest);transform:scaleX(0);transform-origin:left center;transition:transform .38s ease;z-index:-1}
+@media(hover:hover) and (pointer:fine){
+.explore-list a:hover::before{transform:scaleX(1)}
+.explore-list a:hover{color:#fff}
+.explore-list a:hover small,.explore-list a:hover b{color:#fff}
+}
+.explore-list a:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+@media(hover:none),(pointer:coarse){
+.explore-list a:active,.explore-list a:focus{background:transparent;color:var(--ink)}
+.explore-list a:active small,.explore-list a:active b{color:var(--green)}
+.explore-list a::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){.explore-list a::before{transition:none}}
 .intro-layout .hero{display:flex;flex-direction:column;min-height:0;background:transparent}
 .intro-layout .hero-copy{padding:1.3rem 0 1rem;display:block}
 .intro-layout h1{font-size:clamp(2rem,3vw,3rem)}
