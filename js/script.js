@@ -79,3 +79,10 @@ flowRows.forEach((row,index)=>{
     });
   });
 });
+
+/* Reusable back-to-top button for every page */
+document.querySelectorAll(".quick-top").forEach(button=>{
+  button.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+  });
+});
