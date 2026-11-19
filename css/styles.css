@@ -232,3 +232,17 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .flow-band{background:#fff;color:#0d4532}
 .flow-row.is-active .flow-trigger{color:#0d4532}
 @media(hover:hover) and (pointer:fine){.flow-row:hover .flow-trigger{color:#0d4532}}
+
+/* Shared floating navigation: homepage symbol reveal and back to top */
+.quick-nav{position:fixed;right:clamp(12px,2vw,28px);bottom:clamp(16px,3vw,32px);z-index:90;display:flex;flex-direction:column;gap:10px}
+.quick-nav a,.quick-nav button{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border:1px solid #dce6df;border-radius:50%;background:#fff;color:#0d4532;box-shadow:0 4px 18px #0d453226;cursor:pointer;text-decoration:none;font:700 13px Inter,Arial,sans-serif}
+.quick-nav a:focus-visible,.quick-nav button:focus-visible{outline:3px solid #7cb900;outline-offset:3px}
+.quick-home{position:relative;overflow:hidden}
+.quick-home-label{letter-spacing:.04em;transition:opacity .3s}
+.quick-home-mark{position:absolute;inset:6px;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.55) rotate(-30deg);transition:opacity .4s,transform .5s cubic-bezier(.2,.9,.2,1);overflow:hidden}
+.quick-home-mark img{display:block;max-width:none;width:148px;height:auto;position:absolute;left:-1px;top:50%;transform:translateY(-50%)}
+.quick-home:hover .quick-home-mark,.quick-home:focus-visible .quick-home-mark{opacity:1;transform:scale(1) rotate(0)}
+.quick-home:hover .quick-home-label,.quick-home:focus-visible .quick-home-label{opacity:0}
+.quick-top span{font-size:28px;font-weight:400;line-height:1;transition:transform .25s}
+.quick-top:hover span{transform:translateY(-4px)}
+@media(prefers-reduced-motion:reduce){.quick-home-mark,.quick-home-label,.quick-top span{transition:none}}
