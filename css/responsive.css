@@ -52,4 +52,7 @@
 @media(max-width:380px){.chroma-grid{grid-template-columns:1fr}.chroma-card{min-height:190px}}
 
 
-@media(max-width:700px){.flow-row{height:105px}.flow-trigger{grid-template-columns:24px minmax(0,1fr) 22px;gap:.65rem;padding:0 1rem}.flow-trigger strong{font-size:clamp(1.05rem,4.2vw,1.6rem)}.flow-track span{font-size:1.4rem}.flow-track img{width:115px;height:58px}.flow-band{display:none}.flow-row.is-active{background:#eaf2e7;color:#0d4532}}
+@media(max-width:700px){.flow-row{height:105px}.flow-trigger{grid-template-columns:24px minmax(0,1fr) 22px;gap:.65rem;padding:0 1rem}.flow-trigger strong{font-size:clamp(1.05rem,4.2vw,1.6rem)}.flow-track span{font-size:1.4rem}.flow-track img{width:115px;height:58px}.flow-band{display:none}.flow-row.is-active{background:#fff;color:#0d4532}}
+
+/* Two-column row layout after removing navigation arrows */
+@media(max-width:700px){.flow-trigger{grid-template-columns:24px minmax(0,1fr)}}
