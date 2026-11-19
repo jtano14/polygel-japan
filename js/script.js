@@ -86,3 +86,20 @@ document.querySelectorAll(".quick-top").forEach(button=>{
     window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
   });
 });
+
+/* Office selector: no location is guessed or mapped before verification */
+const officeCards=[...document.querySelectorAll(".office-card")];
+const officeNames=["Japan","India","Brunei","Singapore"];
+const officeTypes=["JAPAN OFFICE","INDIA OFFICE","POLYGEL OFFICE","POLYGEL OFFICE"];
+officeCards.forEach((card,index)=>{
+  card.addEventListener("click",()=>{
+    officeCards.forEach((item,i)=>{
+      item.classList.toggle("is-selected",i===index);
+      item.setAttribute("aria-pressed",String(i===index));
+    });
+    const name=document.querySelector("#office-name");
+    const type=document.querySelector("#office-type");
+    if(name)name.textContent=officeNames[index];
+    if(type)type.textContent=officeTypes[index];
+  });
+});
