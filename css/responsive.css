@@ -29,7 +29,7 @@
 
 @media(max-width:600px){
 .feature-accordion{height:215px;gap:3px}
-.feature-panel{padding:.7rem .4rem}
+.feature-panel{padding:2.4rem .4rem .7rem}
 .feature-panel.is-active{flex:6}
 .feature-number{top:.5rem;left:.35rem;font-size:.8rem}
 .feature-panel-content strong{font-size:.85rem}
