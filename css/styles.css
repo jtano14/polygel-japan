@@ -212,3 +212,18 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 @keyframes flow-left{to{transform:translateX(-50%)}}
 @media(hover:hover) and (pointer:fine){.flow-row:hover .flow-band{transform:translateY(0)}.flow-row:hover .flow-trigger{color:#0d4532}}
 @media(prefers-reduced-motion:reduce){.flow-track{animation:none}.flow-band{transition:none}}
+
+/* Prevent stationary labels from overlapping the animated marquee */
+.flow-row.is-active .flow-trigger strong{opacity:0}
+@media(hover:hover) and (pointer:fine){
+  .flow-row:hover .flow-trigger strong{opacity:0}
+}
+.flow-trigger strong{transition:opacity .15s ease}
+.flow-band{z-index:1}
+.flow-trigger{z-index:2}
+@media(prefers-reduced-motion:reduce){
+  .flow-row.is-active .flow-trigger strong,
+  .flow-row:hover .flow-trigger strong{opacity:1}
+  .flow-row.is-active .flow-band,
+  .flow-row:hover .flow-band{display:none}
+}
