@@ -68,9 +68,10 @@
   .product-page .product-hero h1{font-size:clamp(1.8rem,7vw,2.3rem)}
 }
 
-/* Reserve the same subcategory row for every product family, including those without subcategories. */
+/* Fixed subcategory slot: changing product families never moves the tab bar. */
 .product-subnav{min-height:64px;box-sizing:border-box;align-items:flex-start;align-content:flex-start}
+.product-subnav button{width:190px;min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.25;white-space:normal;overflow-wrap:break-word}
 @media(max-width:550px){
-.product-subnav{min-height:64px;flex-wrap:nowrap;overflow-x:auto;align-items:flex-start}
-.product-subnav button{flex:0 0 auto;white-space:nowrap}
+.product-subnav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,52px);gap:8px;min-height:0;height:204px;padding:0 1rem 1rem;overflow:visible;align-content:start}
+.product-subnav button{width:100%;height:52px;min-height:52px;max-height:52px;padding:.4rem .55rem;font-size:.76rem;white-space:normal;flex:none}
 }
