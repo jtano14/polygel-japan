@@ -295,3 +295,17 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .footer-bottom{grid-column:1/-1;border-top:1px solid #42675b;padding-top:1.3rem;color:#c7d7cc;font-size:.78rem}
 @media(max-width:800px){.office-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.office-panel{grid-template-columns:1fr}.office-map{min-height:220px}.site-footer--expanded{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.office-card{min-height:150px}.contact-fields{grid-template-columns:1fr}.site-footer--expanded{grid-template-columns:1fr;gap:1.5rem}}
+
+/* Always identify each About Us panel, including collapsed desktop cards. */
+.about-panel-label{opacity:1;transform:none;text-shadow:0 1px 6px rgba(0,0,0,.65)}
+.about-panel:not(.is-active) .about-panel-label{
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  bottom:1rem;left:.6rem;right:auto;max-height:calc(100% - 2rem);
+  white-space:nowrap;font-size:clamp(.75rem,1vw,1rem)
+}
+.about-panel.is-active .about-panel-label{writing-mode:horizontal-tb;transform:none}
+/* White selected business row must retain its heading on touch devices. */
+@media(hover:none){
+  .flow-row.is-active .flow-trigger strong{opacity:1;color:#0d4532}
+  .flow-row.is-active .flow-trigger>span:first-child{color:#0d4532}
+}
