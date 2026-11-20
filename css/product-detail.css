@@ -152,3 +152,6 @@
   padding:1rem;overflow-y:auto;
  }
 }
+
+/* High-contrast Polygel lime labels on photographic detail banners. */
+.product-hero .eyebrow{color:#b9ed42;}
