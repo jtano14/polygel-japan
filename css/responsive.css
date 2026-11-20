@@ -190,3 +190,6 @@
   #network .office-grid>.office-panel .office-map{min-height:145px}
   #network .office-card{cursor:pointer}
 }
+
+/* Keep office details hidden on initial mobile load until a country is selected. */
+@media(max-width:700px){#network .office-panel[hidden]{display:none!important}}
