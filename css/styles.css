@@ -386,3 +386,24 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .about-gallery--links .about-panel-label small{display:block;font-size:.75rem;font-weight:400;margin-top:7px}
 @media(max-width:700px){.about-gallery--links{grid-template-columns:repeat(2,minmax(0,1fr));height:auto;gap:10px}.about-gallery--links .about-panel{height:210px}.about-gallery--links .about-panel-label{font-size:1rem;left:12px;bottom:12px}}
 @media(max-width:380px){.about-gallery--links{grid-template-columns:1fr}.about-gallery--links .about-panel{height:180px}}
+
+/* Restore the original expanding About Us windows, retaining dedicated page links. */
+@media(min-width:701px){
+  .about-gallery.about-gallery--links{display:flex;gap:10px;height:340px}
+  .about-gallery--links .about-panel,.about-gallery--links .about-panel.is-active{display:block;flex:1 1 0;min-width:0;height:100%;transition:flex .6s cubic-bezier(.22,1,.36,1)}
+  .about-gallery--links .about-panel:first-child{flex:3.6 1 0}
+  .about-gallery--links:hover .about-panel:first-child,.about-gallery--links:focus-within .about-panel:first-child{flex:1 1 0}
+  .about-gallery--links .about-panel:hover,.about-gallery--links .about-panel:focus-visible{flex:3.6 1 0}
+  .about-gallery--links .about-panel img{filter:grayscale(1) brightness(.62);transform:scale(1.03)}
+  .about-gallery--links .about-panel:first-child img{filter:grayscale(0) brightness(.75);transform:scale(1)}
+  .about-gallery--links:hover .about-panel:first-child img,.about-gallery--links:focus-within .about-panel:first-child img{filter:grayscale(1) brightness(.62)}
+  .about-gallery--links .about-panel:hover img,.about-gallery--links .about-panel:focus-visible img{filter:grayscale(0) brightness(.75);transform:scale(1)}
+  .about-gallery--links .about-panel-label{opacity:1;writing-mode:vertical-rl;transform:rotate(180deg);left:14px;right:auto;bottom:16px;font-size:clamp(.9rem,1.2vw,1.15rem);white-space:nowrap}
+  .about-gallery--links .about-panel-label small{display:none}
+  .about-gallery--links .about-panel:first-child .about-panel-label{writing-mode:horizontal-tb;transform:none;left:16px;right:12px;font-size:1.3rem}
+  .about-gallery--links:hover .about-panel:first-child .about-panel-label,.about-gallery--links:focus-within .about-panel:first-child .about-panel-label{writing-mode:vertical-rl;transform:rotate(180deg);left:14px;right:auto;font-size:clamp(.9rem,1.2vw,1.15rem)}
+  .about-gallery--links .about-panel:hover .about-panel-label,.about-gallery--links .about-panel:focus-visible .about-panel-label{writing-mode:horizontal-tb;transform:none;left:16px;right:12px;font-size:1.3rem}
+  .about-gallery--links .about-panel:first-child .about-panel-label small,.about-gallery--links .about-panel:hover .about-panel-label small,.about-gallery--links .about-panel:focus-visible .about-panel-label small{display:block}
+  .about-gallery--links:hover .about-panel:first-child:not(:hover):not(:focus-visible) .about-panel-label small{display:none}
+}
+@media(prefers-reduced-motion:reduce){.about-gallery--links .about-panel{transition:none}}
