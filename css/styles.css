@@ -176,7 +176,7 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .clients-section{padding:2rem 0 2.25rem;border-top:1px solid var(--border);overflow:hidden}
 .clients-heading{max-width:1500px;margin:0 auto 1.25rem;padding:0 clamp(1rem,2.5vw,3rem)}
 .clients-heading .eyebrow{margin:0 0 .25rem}
-.clients-heading h2{font-size:clamp(1.45rem,2.5vw,2rem);margin:0}
+.clients-heading h2{font-size:clamp(1.8rem,3vw,2.25rem);margin:0;line-height:1.2}
 .clients-heading>p:last-child{color:#607067;font-size:.88rem;margin:.3rem 0 0}
 .clients-marquee{width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
 .clients-track{display:flex;width:max-content;animation:clients-scroll 38s linear infinite}
@@ -407,3 +407,12 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
   .about-gallery--links:hover .about-panel:first-child:not(:hover):not(:focus-visible) .about-panel-label small{display:none}
 }
 @media(prefers-reduced-motion:reduce){.about-gallery--links .about-panel{transition:none}}
+
+/* Customers & Affiliations: balanced spacing and centered marquee artwork. */
+.clients-section{padding-top:clamp(3.5rem,5vw,5rem);padding-bottom:clamp(4rem,6vw,6rem)}
+.clients-heading{margin-bottom:2rem}
+.clients-marquee{min-height:128px;display:flex;align-items:center}
+.clients-track,.clients-set{align-items:center}
+.clients-marquee .client-logo-placeholder{height:120px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.clients-marquee .client-logo-placeholder img{display:block;object-fit:contain;object-position:center center;margin:auto}
+@media(max-width:700px){.clients-section{padding-top:3rem;padding-bottom:3.5rem}.clients-heading{margin-bottom:1.5rem}.clients-marquee{min-height:112px}.clients-marquee .client-logo-placeholder{height:108px}}
