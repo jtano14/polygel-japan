@@ -39,3 +39,31 @@
 .document-area--top .product-notice{display:block;margin:.4rem 0 0}
 .request-basket{padding:.7rem}
 }
+
+/* Unified compact hero for every dedicated product page. */
+.product-page .product-hero{
+  min-height:190px;
+}
+.product-page .product-hero-inner{
+  padding:1.65rem clamp(1rem,3vw,3rem);
+}
+.product-page .product-hero h1{
+  font-size:clamp(2rem,3.7vw,3.35rem);
+  line-height:1.12;
+  margin:.3rem 0 .5rem;
+}
+.product-page .product-hero .eyebrow{
+  margin:0;
+}
+.product-page .product-hero p:last-child{
+  margin:.5rem 0 0;
+}
+.product-page .product-back{
+  padding-top:.6rem;
+  padding-bottom:.4rem;
+}
+@media(max-width:550px){
+  .product-page .product-hero{min-height:155px}
+  .product-page .product-hero-inner{padding:1.25rem 1rem}
+  .product-page .product-hero h1{font-size:clamp(1.8rem,7vw,2.3rem)}
+}
