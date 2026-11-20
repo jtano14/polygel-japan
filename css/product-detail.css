@@ -137,3 +137,18 @@
   height:42px;min-height:42px;max-height:42px;font-size:.72rem;
  }
 }
+
+/* Equal-height technical content viewport on every product page. */
+.product-page .technical-content{
+ height:300px;min-height:300px;max-height:300px;
+ overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;
+ scrollbar-gutter:stable;
+}
+.product-page .technical-content .table-scroll{max-width:100%;overflow-x:auto}
+.product-page .technical-content table{min-width:440px}
+@media(max-width:550px){
+ .product-page .technical-content{
+  height:330px;min-height:330px;max-height:330px;
+  padding:1rem;overflow-y:auto;
+ }
+}
