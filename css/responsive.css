@@ -80,3 +80,7 @@
   .applications-section .masonry-card{height:260px}
   .applications-section .masonry-card:last-child{grid-column:span 2;height:230px}
 }
+
+/* Keep About Us navigation cards in a clean grid on mobile. */
+@media(max-width:700px){.about-gallery.about-gallery--links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));height:auto;gap:10px}.about-gallery--links .about-panel,.about-gallery--links .about-panel.is-active{height:210px;flex:none}}
+@media(max-width:380px){.about-gallery.about-gallery--links{grid-template-columns:1fr}.about-gallery--links .about-panel{height:180px}}
