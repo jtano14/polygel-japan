@@ -155,3 +155,11 @@
 
 /* High-contrast Polygel lime labels on photographic detail banners. */
 .product-hero .eyebrow{color:#b9ed42;}
+
+/* Technical content first: allow natural page scrolling rather than nested vertical scroll. */
+.product-page .technical-panel .technical-content{height:auto;min-height:0;max-height:none;overflow-y:visible;scrollbar-gutter:auto}
+.product-page .technical-content .table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.product-page .table-scroll-hint{display:flex;align-items:center;gap:.5rem;color:#315b49;font-size:.85rem;font-weight:600;margin:.65rem 0}
+.product-page .table-scroll-hint[hidden]{display:none}
+.product-page .table-scroll-wrap{position:relative;min-width:0}
+.product-page .table-scroll-wrap.has-overflow:not(.at-end)::after{content:"";position:absolute;right:0;top:2.5rem;bottom:0;width:24px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(227,240,232,.9))}
