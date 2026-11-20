@@ -161,7 +161,7 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .chroma-caption h3{font-size:clamp(1rem,1.5vw,1.3rem);line-height:1.25;margin:.3rem 0 0}
 @media(hover:hover) and (pointer:fine){.chroma-card:hover img{filter:grayscale(0) brightness(.85);transform:scale(1.06)}.chroma-card:hover::after{border-color:var(--card-accent)}}
 .applications-section{border-top:1px solid var(--border)}
-.masonry-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:start}
+.masonry-gallery{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;align-items:start}
 .masonry-card{position:relative;min-width:0;height:360px;overflow:hidden;border-radius:9px;background:#16332e}
 .masonry-card--2{height:420px}.masonry-card--3{height:385px}
 .masonry-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.7);transition:transform .5s,filter .5s}
