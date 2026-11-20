@@ -87,3 +87,9 @@
 @media (max-width:550px){
 .product-page .family-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* Product detail HTML uses body#top, not .product-page. */
+@media (min-width:901px){
+.product-workspace .family-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.product-workspace .family-card{min-width:0}
+}
