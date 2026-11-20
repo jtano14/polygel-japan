@@ -87,20 +87,30 @@ document.querySelectorAll(".quick-top").forEach(button=>{
   });
 });
 
-/* Office selector: no location is guessed or mapped before verification */
+/* Office selector: functions are confirmed; precise addresses remain pending. */
 const officeCards=[...document.querySelectorAll(".office-card")];
-const officeNames=["Japan","India","Brunei","Singapore"];
-const officeTypes=["JAPAN OFFICE","INDIA OFFICE","POLYGEL OFFICE","POLYGEL OFFICE"];
+const officeDetails=[
+  {name:"Japan",type:"TRADE & SALES"},
+  {name:"India",type:"HEADQUARTERS · MANUFACTURING · TRADE & SALES"},
+  {name:"Brunei",type:"MANUFACTURING HUB"},
+  {name:"Singapore",type:"TRADE & SALES"},
+  {name:"Florida, USA",type:"SALES OFFICE"},
+  {name:"Germany",type:"SALES OFFICE"}
+];
 officeCards.forEach((card,index)=>{
   card.addEventListener("click",()=>{
     officeCards.forEach((item,i)=>{
       item.classList.toggle("is-selected",i===index);
       item.setAttribute("aria-pressed",String(i===index));
     });
+    const office=officeDetails[index];
+    if(!office)return;
     const name=document.querySelector("#office-name");
     const type=document.querySelector("#office-type");
-    if(name)name.textContent=officeNames[index];
-    if(type)type.textContent=officeTypes[index];
+    const address=document.querySelector("#office-address");
+    if(name)name.textContent=office.name;
+    if(type)type.textContent=office.type;
+    if(address)address.textContent="Full office address pending confirmation.";
   });
 });
 
