@@ -93,3 +93,26 @@
 .product-workspace .family-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 .product-workspace .family-card{min-width:0}
 }
+
+/* Uniform subcategory navigation: reserve the same space for 0-5 buttons. */
+.product-workspace .product-subnav{
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+ grid-template-rows:46px;gap:8px;height:60px;min-height:60px;
+ padding:0 1.1rem 14px;box-sizing:border-box;align-content:start;
+}
+.product-workspace .product-subnav button{
+ width:100%;min-width:0;height:46px;min-height:46px;max-height:46px;
+ padding:5px 8px;font-size:.78rem;line-height:1.2;
+ display:flex;align-items:center;justify-content:center;text-align:center;
+ white-space:normal;overflow-wrap:break-word;
+}
+@media(max-width:550px){
+ .product-workspace .product-subnav{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(3,46px);gap:7px;
+  height:173px;min-height:173px;padding:0 1rem 21px;
+ }
+ .product-workspace .product-subnav button{
+  height:46px;min-height:46px;max-height:46px;padding:4px 6px;font-size:.73rem;
+ }
+}
