@@ -115,18 +115,27 @@ officeCards.forEach((card,index)=>{
 });
 
 
-/* Carry technical document selections to the preview contact form. */
+/* Prefill contact inquiries from application, product and document links. */
 const documentContactForm=document.querySelector("#contact-form");
 if(documentContactForm){
+  const params=new URLSearchParams(window.location.search);
+  const topic=documentContactForm.querySelector('[name="topic"]');
+  const message=documentContactForm.querySelector('[name="message"]');
+  const source=documentContactForm.querySelector('[name="inquiry_source"]');
+  const validTopics=["General Inquiry","Product Inquiry","Application Inquiry","Business Partnership"];
+  const requestedTopic=params.get("inquiry");
+  const requestedSource=params.get("source");
+  if(requestedTopic&&validTopics.includes(requestedTopic)&&topic)topic.value=requestedTopic;
+  if(requestedSource&&source)source.value=requestedSource.slice(0,160);
+  if(requestedSource&&message)message.value="Regarding: "+requestedSource.slice(0,160)+"\n\n";
   try{
     const requests=JSON.parse(sessionStorage.getItem("polygel-japan-document-requests")||"[]");
-    const message=documentContactForm.querySelector('textarea[name="message"]');
-    const topic=documentContactForm.querySelector('select[name="topic"]');
     if(Array.isArray(requests)&&requests.length&&message){
       const lines=requests.filter(item=>item&&typeof item.family==="string"&&typeof item.document==="string").map(item=>"- "+item.family+": "+item.document);
       if(lines.length){
         message.value="Technical document request:\n"+lines.join("\n")+"\n\nAdditional information:\n";
-        if(topic)topic.value="Products and distribution";
+        if(topic)topic.value="Product Inquiry";
+        if(source)source.value="Technical document request";
       }
     }
   }catch(_){}
