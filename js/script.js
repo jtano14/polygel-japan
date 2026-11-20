@@ -117,3 +117,37 @@ if(documentContactForm){
     }
   }catch(_){}
 }
+
+/* Phone office details: expand immediately below the selected country.
+   On desktop the original shared detail panel stays below the office grid. */
+(()=>{
+  const grid=document.querySelector("#network .office-grid");
+  const panel=document.querySelector("#network .office-panel");
+  if(!grid||!panel)return;
+  const cards=[...grid.querySelectorAll(".office-card")];
+  const mobile=window.matchMedia("(max-width:700px)");
+  let expanded=-1;
+  function sync(){
+    if(mobile.matches){
+      if(expanded<0){panel.hidden=true;return;}
+      cards[expanded].after(panel);
+      panel.hidden=false;
+    }else{
+      grid.after(panel);
+      panel.hidden=false;
+    }
+  }
+  cards.forEach((card,index)=>{
+    card.addEventListener("click",()=>{
+      if(!mobile.matches)return;
+      expanded=expanded===index?-1:index;
+      if(expanded<0){
+        cards.forEach(item=>{item.classList.remove("is-selected");item.setAttribute("aria-pressed","false");});
+      }
+      sync();
+    });
+  });
+  if(mobile.addEventListener)mobile.addEventListener("change",sync);
+  else mobile.addListener(sync);
+  sync();
+})();
