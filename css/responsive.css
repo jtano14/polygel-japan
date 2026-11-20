@@ -56,3 +56,15 @@
 
 /* Two-column row layout after removing navigation arrows */
 @media(max-width:700px){.flow-trigger{grid-template-columns:24px minmax(0,1fr)}}
+
+/* On phones, every About Us title remains horizontal and legible. */
+@media(max-width:700px){
+  .about-panel:not(.is-active) .about-panel-label{
+    writing-mode:horizontal-tb;transform:none;left:.85rem;right:.5rem;
+    bottom:.55rem;max-height:none;white-space:normal;
+    font-size:clamp(.82rem,3.5vw,1rem);line-height:1.2
+  }
+  .about-panel.is-active .about-panel-label{left:.85rem;bottom:.9rem}
+  .about-panel::after{inset:0;background:linear-gradient(transparent 25%,rgba(6,24,24,.82))}
+  .flow-row.is-active .flow-trigger strong{opacity:1;color:#0d4532}
+}
