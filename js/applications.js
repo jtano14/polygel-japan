@@ -1,0 +1,1 @@
+"use strict";document.querySelectorAll(".industry-tabs").forEach(list=>{const buttons=[...list.querySelectorAll('[role="tab"]')];buttons.forEach((button,i)=>button.addEventListener("click",()=>{buttons.forEach((b,j)=>{const active=i===j;b.setAttribute("aria-selected",String(active));document.getElementById(b.getAttribute("aria-controls")).hidden=!active;});}));});
