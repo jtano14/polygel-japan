@@ -309,3 +309,10 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
   .flow-row.is-active .flow-trigger strong{opacity:1;color:#0d4532}
   .flow-row.is-active .flow-trigger>span:first-child{color:#0d4532}
 }
+
+/* Applications: balanced four-card and three-card collage */
+@media(min-width:1051px){
+  .applications-section .masonry-gallery{grid-template-columns:repeat(12,minmax(0,1fr));align-items:stretch}
+  .applications-section .masonry-card{grid-column:span 3;height:310px}
+  .applications-section .masonry-card:nth-child(n+5){grid-column:span 4;height:310px}
+}
