@@ -37,29 +37,6 @@ featureAccordion?.addEventListener("pointerleave",event=>{
   }
 });
 
-const aboutPanels=[...document.querySelectorAll(".about-panel")];
-const aboutDetails=[...document.querySelectorAll(".about-detail")];
-function activateAbout(panel){
-  const key=panel.dataset.about;
-  aboutPanels.forEach(item=>{
-    const active=item===panel;
-    item.classList.toggle("is-active",active);
-    item.setAttribute("aria-pressed",String(active));
-  });
-  aboutDetails.forEach(item=>{
-    const active=item.dataset.aboutDetail===key;
-    item.classList.toggle("is-active",active);
-    item.hidden=!active;
-  });
-}
-aboutPanels.forEach(panel=>{
-  panel.addEventListener("click",()=>activateAbout(panel));
-  panel.addEventListener("pointerenter",event=>{
-    if(event.pointerType==="mouse"||event.pointerType==="pen")activateAbout(panel);
-  });
-  panel.addEventListener("focus",()=>activateAbout(panel));
-});
-
 /* Flowing menu hover highlight and click-to-expand descriptions */
 const flowRows=[...document.querySelectorAll(".flow-row")];
 const flowDetails=[...document.querySelectorAll(".flow-detail")];
