@@ -363,3 +363,16 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
 .contact-info-row a{color:#0d604a;font-weight:700}
 .contact-info-foot{background:#eef5f0;border-left:3px solid #27775b;padding:16px 18px;margin-top:15px;font-size:.9rem}
 @media(max-width:850px){.contact-layout{grid-template-columns:1fr}.contact-info-panel{padding:8px 0}}
+
+/* Six-office selector: compact tabs above the selected office details. */
+@media(min-width:1151px){
+  .office-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+  .office-card{min-height:122px;padding:14px 12px;border-radius:10px}
+  .office-card small{font-size:.62rem;line-height:1.4;margin-bottom:12px}
+  .office-card strong{font-size:clamp(1.05rem,1.5vw,1.45rem);letter-spacing:-.035em;line-height:1.2}
+  .office-card span{font-size:.73rem;margin-top:5px}
+}
+@media(min-width:801px) and (max-width:1150px){
+  .office-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .office-card{min-height:135px}
+}
