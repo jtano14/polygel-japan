@@ -116,3 +116,24 @@
   height:46px;min-height:46px;max-height:46px;padding:4px 6px;font-size:.73rem;
  }
 }
+
+/* Keep subcategory buttons the same compact width regardless of button count. */
+.product-page .technical-panel .product-subnav{
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+ justify-content:start;align-content:start;grid-auto-flow:row;
+ height:54px;min-height:54px;padding:0 1.1rem 12px;gap:8px;
+}
+.product-page .technical-panel .product-subnav>button{
+ width:100%;height:42px;min-height:42px;max-height:42px;
+ padding:4px 6px;font-size:.76rem;line-height:1.15;
+}
+@media(max-width:550px){
+ .product-page .technical-panel .product-subnav{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(3,42px);height:151px;min-height:151px;
+  gap:6px;padding:0 1rem 13px;
+ }
+ .product-page .technical-panel .product-subnav>button{
+  height:42px;min-height:42px;max-height:42px;font-size:.72rem;
+ }
+}
