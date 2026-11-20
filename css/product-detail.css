@@ -67,3 +67,10 @@
   .product-page .product-hero-inner{padding:1.25rem 1rem}
   .product-page .product-hero h1{font-size:clamp(1.8rem,7vw,2.3rem)}
 }
+
+/* Reserve the same subcategory row for every product family, including those without subcategories. */
+.product-subnav{min-height:64px;box-sizing:border-box;align-items:flex-start;align-content:flex-start}
+@media(max-width:550px){
+.product-subnav{min-height:64px;flex-wrap:nowrap;overflow-x:auto;align-items:flex-start}
+.product-subnav button{flex:0 0 auto;white-space:nowrap}
+}
