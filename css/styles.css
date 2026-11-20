@@ -316,3 +316,7 @@ h1{font-size:clamp(2.5rem,4.2vw,3.5rem);line-height:1.14;letter-spacing:-.035em;
   .applications-section .masonry-card{grid-column:span 3;height:310px}
   .applications-section .masonry-card:nth-child(n+5){grid-column:span 4;height:310px}
 }
+
+/* Corporate partner logos: consistent framing without distorting artwork */
+.client-logo-placeholder{padding:12px 18px;box-sizing:border-box;overflow:hidden}
+.client-logo-placeholder img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
