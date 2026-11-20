@@ -68,3 +68,15 @@
   .about-panel::after{inset:0;background:linear-gradient(transparent 25%,rgba(6,24,24,.82))}
   .flow-row.is-active .flow-trigger strong{opacity:1;color:#0d4532}
 }
+
+/* Balanced application collage on tablet and phone */
+@media(min-width:701px) and (max-width:1050px){
+  .applications-section .masonry-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .applications-section .masonry-card{height:300px}
+  .applications-section .masonry-card:last-child{grid-column:span 2}
+}
+@media(max-width:700px){
+  .applications-section .masonry-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .applications-section .masonry-card{height:260px}
+  .applications-section .masonry-card:last-child{grid-column:span 2;height:230px}
+}
